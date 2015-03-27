@@ -1,0 +1,206 @@
+object Laguna: TLaguna
+  Left = 186
+  Height = 720
+  Top = 41
+  Width = 1024
+  HorzScrollBar.Page = 1016
+  VertScrollBar.Page = 712
+  VertScrollBar.Visible = False
+  AutoScroll = True
+  Caption = 'Laguna'
+  ClientHeight = 720
+  ClientWidth = 1024
+  Constraints.MaxHeight = 720
+  Constraints.MaxWidth = 1024
+  Constraints.MinHeight = 720
+  Constraints.MinWidth = 1024
+  OnCreate = FormCreate
+  LCLVersion = '1.2.4.0'
+  object InputArea: TMemo
+    Left = 8
+    Height = 440
+    Top = 88
+    Width = 460
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnChange = InputAreaChange
+    ParentBidiMode = False
+    ParentFont = False
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object SqlQuery: TLabel
+    Left = 8
+    Height = 25
+    Top = 56
+    Width = 86
+    Caption = 'Sql запрос'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object ToPerform: TButton
+    Left = 192
+    Height = 25
+    Top = 538
+    Width = 75
+    Caption = 'Выполнить'
+    OnClick = ToPerformClick
+    TabOrder = 1
+  end
+  object ResultTable: TDBGrid
+    Left = 487
+    Height = 440
+    Top = 88
+    Width = 520
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+    TabOrder = 2
+  end
+  object DBconnect: TMemo
+    Left = 8
+    Height = 26
+    Top = 8
+    Width = 816
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'localhost:C:\zimdb\zimovikdb.fdb'
+    )
+    ParentFont = False
+    TabOrder = 3
+  end
+  object ToConnectDB: TButton
+    Left = 840
+    Height = 26
+    Top = 8
+    Width = 80
+    Caption = 'Подключить'
+    OnClick = ToConnectDBClick
+    TabOrder = 4
+  end
+  object ToDisconnectDB: TButton
+    Left = 936
+    Height = 26
+    Top = 8
+    Width = 80
+    Caption = 'Отключить'
+    OnClick = ToDisconnectDBClick
+    TabOrder = 5
+  end
+  object ErrorLog: TMemo
+    Left = 8
+    Height = 136
+    Top = 576
+    Width = 999
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 6
+  end
+  object Login1: TMemo
+    Left = 487
+    Height = 26
+    Top = 48
+    Width = 150
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      'sysdba'
+    )
+    ParentFont = False
+    TabOrder = 7
+  end
+  object Password1: TMemo
+    Left = 674
+    Height = 26
+    Top = 48
+    Width = 150
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      'masterkey'
+    )
+    ParentFont = False
+    TabOrder = 8
+  end
+  object L: TLabel
+    Left = 472
+    Height = 26
+    Top = 48
+    Width = 10
+    AutoSize = False
+    Caption = 'L'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object P: TLabel
+    Left = 660
+    Height = 26
+    Top = 48
+    Width = 10
+    AutoSize = False
+    Caption = 'P'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -21
+    Font.Name = 'Arial Narrow'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object IBConnection1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Transaction = SQLTransaction1
+    LogEvents = []
+    left = 112
+    top = 56
+  end
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = IBConnection1
+    left = 144
+    top = 56
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = IBConnection1
+    Transaction = SQLTransaction1
+    Params = <>
+    left = 176
+    top = 56
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 208
+    top = 56
+  end
+end
