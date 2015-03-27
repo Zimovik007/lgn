@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, IBConnection, sqldb, DB, FileUtil, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, DBGrids, syntaxpas;
+  Graphics, Dialogs, StdCtrls, DBGrids, Menus;
 
 type
 
@@ -15,6 +15,12 @@ type
   TLaguna = class(TForm)
     ErrorLog: TMemo;
     L: TLabel;
+    MenuDB: TMainMenu;
+    Database1: TMenuItem;
+    Execute1: TMenuItem;
+    View1: TMenuItem;
+    ConnectDBmenu: TMenuItem;
+    DisconnectDBmenu: TMenuItem;
     P: TLabel;
     Login1: TMemo;
     Password1: TMemo;
@@ -29,8 +35,9 @@ type
     ToPerform: TButton;
     InputArea: TMemo;
     SqlQuery: TLabel;
-    //procedure FormCreate(Sender: TObject);
-    //procedure InputAreaChange(Sender: TObject);
+    procedure ConnectDBmenuClick(Sender: TObject);
+    procedure DisconnectDBmenuClick(Sender: TObject);
+    procedure Execute1Click(Sender: TObject);
     procedure ToConnectDBClick(Sender: TObject);
     procedure ToDisconnectDBClick(Sender: TObject);
     procedure ToPerformClick(Sender: TObject);
@@ -64,7 +71,7 @@ begin
   try
     SQLTransaction1.Active := True;
     IBConnection1.Connected := True;
-    ErrorLog.Lines[0] := 'Успешный человек успешен во всем';
+    ErrorLog.Lines[0] := 'Подключение установлено';
   except
     ErrorLog.Lines[0] := 'Вы ввели неверный пароль или любые другие данные';
   end;
@@ -83,7 +90,7 @@ begin
   ErrorLog.Lines.Text := '';
   if not SQLTransaction1.Active then
   begin
-    ErrorLog.Lines[0] := 'Нельзя сотворить здесь... Не подключившись к БД';
+    ErrorLog.Lines[0] := 'Нет подключения к БД';
     exit;
   end;
   SQLQuery1.Active := False;
@@ -97,27 +104,28 @@ begin
     SQLQuery1.Active := True;
     ErrorLog.Lines[0] := 'Было исполнено';
   except
-    on E: Exception do begin
-      ErrorLog.Lines[0] := '';
-      ErrorLog.Lines[0] := 'Ваш код содержит ошибку, нужно исправить ' + #13#10 + E.Message;
+    on E: Exception do
+    begin
+      ErrorLog.Lines[0] := 'Ваш код содержит ошибку, нужно исправить ' +
+        #13#10 + E.Message;
     end;
   end;
 end;
 
-{
-// СИНТАКСИС
-
-procedure TLaguna.InputAreaChange(Sender: TObject);
-var
-  i: integer;
+procedure TLaguna.ConnectDBmenuClick(Sender: TObject);
 begin
-
+  ToConnectDBClick(Sender);
 end;
 
-procedure TLaguna.FormCreate(Sender: TObject);
+procedure TLaguna.DisconnectDBmenuClick(Sender: TObject);
 begin
-
+  ToDisconnectDBClick(Sender);
 end;
-}
+
+procedure TLaguna.Execute1Click(Sender: TObject);
+begin
+  ToPerformClick(Sender);
+end;
+
 
 end.
