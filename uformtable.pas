@@ -21,7 +21,7 @@ type
     procedure CreateTable(Sender: TObject; index: integer);
   end;
 
-  function GetSqlCode(index: integer): Ansistring;
+  function GetSqlCode(index: integer): TStringList;
 
 var
   TableForm1: TTableForm1;
@@ -40,17 +40,19 @@ begin
   TableForm1.Caption := (Sender as TMenuItem).Caption;
   TableForm1.Tag := (Sender as TMenuItem).Tag;
   TableForm1.SQLQuery1.Active := False;
-  TableForm1.SQLQuery1.SQL.Text := GetSqlCode(index);
-  //TableForm1.SQLQuery1.SQL.text := 'Select * From ' + Tables[index].name;
+  TableForm1.SQLQuery1.SQL := GetSqlCode(index);
   TableForm1.SQLQuery1.Active := True;
   for i := 0 to high(Tables[index].Fields) do begin
+    //TableForm1.DBGrid1.Columns.Add.FieldName := Tables[index].Fields[i].name;
     TableForm1.DBGrid1.Columns[i].Title.Caption := Tables[index].Fields[i].caption;
     TableForm1.DBGrid1.Columns[i].Width := Tables[index].Fields[i].width;
+    TableForm1.DBGrid1.Columns[i].Visible := Tables[index].Fields[i].Visible;
   end;
 end;
 
-function GetSqlCode(index: integer):Ansistring;
+function GetSqlCode(index: integer): TStringList;
 var
+  res : TStringList;
   Sel, From, Inn: string;
   i: integer;
 begin
@@ -74,18 +76,14 @@ begin
     Inn += '.';
     Inn += 'id ';
   end;
-  if Sel = 'Select ' then begin
-    for i := 0 to high(Tables[index].Fields) do begin
-      if (Tables[index].Fields[i].visible) then begin
-        Sel += Tables[index].Fields[i].name;
-        Sel += ' ,';
-      end;
-    end;
-  end;
   if Sel = 'Select ' then Sel += '* ';
   Sel[length(Sel)] := ' ';
-  ShowMessage(Sel + From + Inn);
-  result := Sel + From + Inn;
+  //ShowMessage(Sel + From + Inn);
+  res := TStringList.Create;
+  res.Append(Sel);
+  res.Append(From);
+  res.Append(Inn);
+  result := res;
 end;
 
 end.
