@@ -39,7 +39,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="3">
+    <Units Count="5">
       <Unit0>
         <Filename Value="lagunaLpi.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -58,6 +58,18 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="syntaxpas"/>
       </Unit2>
+      <Unit3>
+        <Filename Value="umetadata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UMetaData"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="uformtable.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TableForm1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UFormTable"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

@@ -1,0 +1,70 @@
+object TableForm1: TTableForm1
+  Left = 559
+  Height = 800
+  Top = 71
+  Width = 930
+  Caption = 'TableForm1'
+  ClientHeight = 800
+  ClientWidth = 930
+  LCLVersion = '1.2.4.0'
+  object DBGrid1: TDBGrid
+    AnchorSideBottom.Control = DBNavigator1
+    Left = 8
+    Height = 736
+    Top = 6
+    Width = 914
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Bottom = 10
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource1
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+    TitleFont.CharSet = RUSSIAN_CHARSET
+    TitleFont.Height = -16
+    TitleFont.Name = 'Arial'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Quality = fqDraft
+    TitleFont.Style = [fsBold]
+    TitleStyle = tsStandard
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 8
+    Height = 40
+    Top = 752
+    Width = 914
+    Anchors = [akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    BorderSpacing.Bottom = 10
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 40
+    ClientWidth = 914
+    DataSource = DataSource1
+    Options = []
+    TabOrder = 1
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = Laguna.IBConnection1
+    Transaction = Laguna.SQLTransaction1
+    Params = <>
+    left = 116
+    top = 107
+  end
+  object DataSource1: TDataSource
+    DataSet = SQLQuery1
+    left = 152
+    top = 107
+  end
+end

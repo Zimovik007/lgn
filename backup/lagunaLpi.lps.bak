@@ -1,20 +1,18 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="5">
+    <Units Count="12">
       <Unit0>
         <Filename Value="lagunaLpi.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="lagunaLpi"/>
-        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="20"/>
-        <UsageCount Value="42"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="234"/>
       </Unit0>
       <Unit1>
         <Filename Value="lagunapas.pas"/>
@@ -23,12 +21,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="lagunaPas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="79"/>
-        <CursorPos X="1" Y="110"/>
-        <UsageCount Value="42"/>
+        <TopLine Value="24"/>
+        <CursorPos X="97" Y="95"/>
+        <UsageCount Value="234"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -39,24 +36,86 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="23" Y="26"/>
-        <UsageCount Value="42"/>
+        <UsageCount Value="234"/>
       </Unit2>
       <Unit3>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="2684"/>
-        <CursorPos X="1" Y="2711"/>
-        <UsageCount Value="8"/>
+        <TopLine Value="3609"/>
+        <CursorPos X="1" Y="3636"/>
+        <UsageCount Value="74"/>
       </Unit3>
       <Unit4>
-        <Filename Value="C:\Langs\lazarus\lcl\include\control.inc"/>
+        <Filename Value="C:\lazarus\lcl\include\customlistbox.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="170"/>
+        <CursorPos X="1" Y="197"/>
+        <UsageCount Value="73"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="C:\lazarus\lcl\include\menuitem.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="95"/>
+        <CursorPos X="1" Y="124"/>
+        <UsageCount Value="4"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\lcl\lclclasses.pp"/>
+        <UnitName Value="LCLClasses"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="86"/>
+        <CursorPos X="1" Y="119"/>
+        <UsageCount Value="4"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\lcl\widgetset\wsmenus.pp"/>
+        <UnitName Value="WSMenus"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="94"/>
+        <CursorPos X="1" Y="122"/>
+        <UsageCount Value="4"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\lcl\widgetset\wslclclasses.pp"/>
+        <UnitName Value="WSLCLClasses"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="112"/>
+        <CursorPos X="1" Y="156"/>
+        <UsageCount Value="4"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="umetadata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UMetaData"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="12"/>
+        <CursorPos X="25" Y="153"/>
+        <UsageCount Value="82"/>
+        <Loaded Value="True"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="uformtable.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="TableForm1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UFormTable"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="3613"/>
-        <CursorPos X="1" Y="3640"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="1"/>
+        <CursorPos X="75" Y="3"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
-      </Unit4>
+        <LoadedDesigner Value="True"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\lcl\include\dbcustomnavigator.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="368"/>
+        <CursorPos X="1" Y="395"/>
+        <UsageCount Value="10"/>
+      </Unit11>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
@@ -64,124 +123,125 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="82" Column="101" TopLine="43"/>
+        <Caret Line="161" Column="49" TopLine="127"/>
       </Position1>
       <Position2>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="77" Column="29" TopLine="41"/>
+        <Caret Line="154" Column="60" TopLine="130"/>
       </Position2>
       <Position3>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="9" Column="53" TopLine="1"/>
+        <Caret Line="179" Column="1" TopLine="132"/>
       </Position3>
       <Position4>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="94" Column="5" TopLine="53"/>
+        <Caret Line="154" Column="69" TopLine="130"/>
       </Position4>
       <Position5>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="93" Column="13" TopLine="54"/>
+        <Caret Line="159" Column="70" TopLine="132"/>
       </Position5>
       <Position6>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="85" Column="36" TopLine="55"/>
+        <Caret Line="156" Column="74" TopLine="133"/>
       </Position6>
       <Position7>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="84" Column="115" TopLine="55"/>
+        <Caret Line="153" Column="13" TopLine="132"/>
       </Position7>
       <Position8>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="79" Column="69" TopLine="60"/>
+        <Caret Line="152" Column="32" TopLine="128"/>
       </Position8>
       <Position9>
-        <Filename Value="lagunaLpi.lpr"/>
-        <Caret Line="18" Column="41" TopLine="1"/>
+        <Filename Value="lagunapas.pas"/>
+        <Caret Line="157" Column="116" TopLine="129"/>
       </Position9>
       <Position10>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="97" Column="84" TopLine="67"/>
+        <Caret Line="149" Column="44" TopLine="136"/>
       </Position10>
       <Position11>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="110" Column="1" TopLine="56"/>
+        <Caret Line="146" Column="3" TopLine="121"/>
       </Position11>
       <Position12>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="31" Column="60" TopLine="7"/>
+        <Caret Line="153" Column="42" TopLine="135"/>
       </Position12>
       <Position13>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="76" Column="28" TopLine="48"/>
+        <Caret Line="156" Column="40" TopLine="130"/>
       </Position13>
       <Position14>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="75" Column="17" TopLine="48"/>
+        <Caret Line="153" Column="45" TopLine="129"/>
       </Position14>
       <Position15>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="83" Column="9" TopLine="49"/>
+        <Caret Line="154" Column="7" TopLine="135"/>
       </Position15>
       <Position16>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="78" Column="14" TopLine="57"/>
+        <Caret Line="51" Column="27" TopLine="28"/>
       </Position16>
       <Position17>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="32" Column="7" TopLine="5"/>
+        <Caret Line="160" Column="73" TopLine="136"/>
       </Position17>
       <Position18>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="31" Column="25" TopLine="5"/>
+        <Caret Line="172" Column="61" TopLine="138"/>
       </Position18>
       <Position19>
-        <Filename Value="lagunapas.pas"/>
-        <Caret Line="74" Column="22" TopLine="47"/>
+        <Filename Value="uformtable.pas"/>
+        <Caret Line="20" Column="62" TopLine="1"/>
       </Position19>
       <Position20>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="31" Column="61" TopLine="1"/>
+        <Caret Line="81" Column="5" TopLine="66"/>
       </Position20>
       <Position21>
-        <Filename Value="lagunapas.pas"/>
-        <Caret Line="32" Column="61" TopLine="1"/>
+        <Filename Value="umetadata.pas"/>
+        <Caret Line="153" Column="25" TopLine="124"/>
       </Position21>
       <Position22>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="33" Column="61" TopLine="1"/>
+        <Caret Line="47" Column="6" TopLine="21"/>
       </Position22>
       <Position23>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="34" Column="61" TopLine="1"/>
+        <Caret Line="13" Column="18" TopLine="28"/>
       </Position23>
       <Position24>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="35" Column="61" TopLine="1"/>
+        <Caret Line="179" Column="16" TopLine="145"/>
       </Position24>
       <Position25>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="36" Column="61" TopLine="1"/>
+        <Caret Line="9" Column="30" TopLine="1"/>
       </Position25>
       <Position26>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="35" Column="61" TopLine="1"/>
+        <Caret Line="169" Column="18" TopLine="147"/>
       </Position26>
       <Position27>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="36" Column="61" TopLine="1"/>
+        <Caret Line="98" Column="25" TopLine="79"/>
       </Position27>
       <Position28>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="37" Column="61" TopLine="1"/>
+        <Caret Line="96" Column="30" TopLine="71"/>
       </Position28>
       <Position29>
         <Filename Value="lagunapas.pas"/>
-        <Caret Line="89" Column="1" TopLine="47"/>
+        <Caret Line="95" Column="97" TopLine="24"/>
       </Position29>
       <Position30>
-        <Filename Value="lagunapas.pas"/>
-        <Caret Line="95" Column="1" TopLine="67"/>
+        <Filename Value="uformtable.pas"/>
+        <Caret Line="20" Column="61" TopLine="1"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
+  <EditorMacros Count="0"/>
 </CONFIG>
