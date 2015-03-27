@@ -132,30 +132,23 @@ end;
 
 procedure TLaguna.ClickOnTable(Sender: TObject);
 var
-  index, i: integer;
+  index: integer;
 begin
   index := (Sender as TMenuItem).Tag;
   if AllForms[index].used then begin
     AllForms[index].FormTable.BringToFront;
   end
   else begin
+    TableForm1.CreateTable(Sender, index);
     with AllForms[index] do begin
       FormTable := TTableForm1.Create(Self);
-      FormTable.Caption := (Sender as TMenuItem).Caption;
-      FormTable.Tag := (Sender as TMenuItem).Tag;
+      FormTable := TableForm1;
       Used := True;
       FormTable.OnClose := @CloseForm;
-      FormTable.SQLQuery1.Active := False;
-      FormTable.SQLQuery1.SQL.text := 'Select * From ' + Tables[index].name;
-      FormTable.SQLQuery1.Active := True;
-      for i := 0 to high(Tables[index].Fields) do begin
-        FormTable.DBGrid1.Columns[i].Title.Caption := Tables[index].Fields[i].caption;
-        FormTable.DBGrid1.Columns[i].Width := Tables[index].Fields[i].width;
-      end;
       FormTable.Show;
+      end;
     end;
   end;
-end;
 
 procedure TLaguna.CloseForm(Sender: TObject; var Action1: TCloseAction);
 begin
