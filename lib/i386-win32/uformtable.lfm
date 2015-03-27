@@ -1,7 +1,7 @@
 object TableForm1: TTableForm1
-  Left = 559
+  Left = 623
   Height = 800
-  Top = 71
+  Top = 248
   Width = 930
   Caption = 'TableForm1'
   ClientHeight = 800

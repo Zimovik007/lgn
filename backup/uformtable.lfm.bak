@@ -1,7 +1,7 @@
 object TableForm1: TTableForm1
-  Left = 559
+  Left = 673
   Height = 800
-  Top = 71
+  Top = 111
   Width = 930
   Caption = 'TableForm1'
   ClientHeight = 800
@@ -53,6 +53,7 @@ object TableForm1: TTableForm1
     DataSource = DataSource1
     Options = []
     TabOrder = 1
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
