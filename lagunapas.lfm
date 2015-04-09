@@ -1,7 +1,7 @@
 object Laguna: TLaguna
-  Left = 845
+  Left = 606
   Height = 200
-  Top = 132
+  Top = 294
   Width = 530
   HorzScrollBar.Page = 520
   VertScrollBar.Page = 130

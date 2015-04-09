@@ -1,20 +1,20 @@
 object TableForm1: TTableForm1
-  Left = 838
-  Height = 800
-  Top = 107
-  Width = 932
+  Left = 839
+  Height = 524
+  Top = 117
+  Width = 818
   Caption = 'TableForm1'
-  ClientHeight = 800
-  ClientWidth = 932
+  ClientHeight = 524
+  ClientWidth = 818
   Constraints.MinHeight = 250
   Constraints.MinWidth = 250
   LCLVersion = '1.2.4.0'
   object DBGrid1: TDBGrid
     AnchorSideBottom.Control = DBNavigator1
     Left = 8
-    Height = 734
+    Height = 458
     Top = 8
-    Width = 912
+    Width = 798
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Bottom = 10
     Color = clWindow
@@ -36,12 +36,13 @@ object TableForm1: TTableForm1
     TitleFont.Quality = fqDraft
     TitleFont.Style = [fsBold]
     TitleStyle = tsStandard
+    OnTitleClick = DBGrid1TitleClick
   end
   object DBNavigator1: TDBNavigator
     Left = 8
     Height = 40
-    Top = 752
-    Width = 912
+    Top = 476
+    Width = 798
     Anchors = [akLeft, akRight, akBottom]
     BevelOuter = bvNone
     BorderSpacing.Bottom = 10
@@ -52,7 +53,7 @@ object TableForm1: TTableForm1
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 40
-    ClientWidth = 912
+    ClientWidth = 798
     DataSource = DataSource1
     Options = []
     TabOrder = 1

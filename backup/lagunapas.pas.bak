@@ -142,6 +142,7 @@ begin
     TableForm1.CreateTable(Sender, index);
     with AllForms[index] do begin
       FormTable := TTableForm1.Create(Self);
+      FormTable := TableForm1;
       Used := True;
       FormTable.OnClose := @CloseForm;
       FormTable.Show;
