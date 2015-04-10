@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, lagunaPas, syntaxpas, UMetaData, UFormTable
+  Forms, lagunaPas, syntaxpas, UMetaData, UFormTable, selectfilter
   { you can add units after this };
 
 {$R *.res}
@@ -17,6 +17,7 @@ begin
   Application.Initialize;
   Application.CreateForm(TLaguna, Laguna);
   Application.CreateForm(TTableForm1, TableForm1);
+  Application.CreateForm(TselFilter, selFilter);
   Application.Run;
 end.
 

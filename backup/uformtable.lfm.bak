@@ -1,21 +1,23 @@
 object TableForm1: TTableForm1
-  Left = 839
-  Height = 524
-  Top = 117
-  Width = 818
+  Left = 767
+  Height = 566
+  Top = 131
+  Width = 855
   Caption = 'TableForm1'
-  ClientHeight = 524
-  ClientWidth = 818
+  ClientHeight = 566
+  ClientWidth = 855
   Constraints.MinHeight = 250
   Constraints.MinWidth = 250
   LCLVersion = '1.2.4.0'
   object DBGrid1: TDBGrid
+    AnchorSideRight.Control = FiltersPanel
     AnchorSideBottom.Control = DBNavigator1
     Left = 8
-    Height = 458
+    Height = 500
     Top = 8
-    Width = 798
+    Width = 670
     Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
     Color = clWindow
     Columns = <>
@@ -39,12 +41,14 @@ object TableForm1: TTableForm1
     OnTitleClick = DBGrid1TitleClick
   end
   object DBNavigator1: TDBNavigator
+    AnchorSideRight.Control = FiltersPanel
     Left = 8
     Height = 40
-    Top = 476
-    Width = 798
+    Top = 518
+    Width = 670
     Anchors = [akLeft, akRight, akBottom]
     BevelOuter = bvNone
+    BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
     ChildSizing.EnlargeHorizontal = crsScaleChilds
     ChildSizing.EnlargeVertical = crsScaleChilds
@@ -53,11 +57,70 @@ object TableForm1: TTableForm1
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 40
-    ClientWidth = 798
+    ClientWidth = 670
     DataSource = DataSource1
     Options = []
     TabOrder = 1
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
+  end
+  object FiltersPanel: TPanel
+    Left = 688
+    Height = 549
+    Top = 9
+    Width = 160
+    Anchors = [akTop, akRight, akBottom]
+    BorderSpacing.Top = 10
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    ClientHeight = 549
+    ClientWidth = 160
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -24
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+    object AddFilterButton: TButton
+      Left = 8
+      Height = 25
+      Top = 24
+      Width = 25
+      Caption = '+'
+      OnClick = AddFilterButtonClick
+      TabOrder = 0
+    end
+    object selfilter1: TRadioGroup
+      Left = 40
+      Height = 64
+      Top = 0
+      Width = 113
+      AutoFill = True
+      ChildSizing.LeftRightSpacing = 6
+      ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+      ChildSizing.EnlargeVertical = crsHomogenousChildResize
+      ChildSizing.ShrinkHorizontal = crsScaleChilds
+      ChildSizing.ShrinkVertical = crsScaleChilds
+      ChildSizing.Layout = cclLeftToRightThenTopToBottom
+      ChildSizing.ControlsPerLine = 2
+      ClientHeight = 46
+      ClientWidth = 109
+      Columns = 2
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Height = -12
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ItemIndex = 0
+      Items.Strings = (
+        '='
+        '<'
+        '>'
+        'от X до Y'
+      )
+      ParentFont = False
+      TabOrder = 1
+    end
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
