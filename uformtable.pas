@@ -245,6 +245,7 @@ begin
     ShowMessage('Запрос введен неверно!');
     exit;
   end;
+
   if (Filters[index].Value1.Text <> '') and (Filters[index].Value2.Text = '') then
   begin
     if Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefField =
@@ -268,40 +269,33 @@ begin
         Tables[TableIndex].Name + '.' +
         Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex + 1].Name +
         '>' + Filters[index].Value1.Text + ' and ' + Tables[TableIndex].Name +
-        '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex +
-        1].Name + '<' + Filters[index].Value2.Text
+        '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex + 1].Name +
+        '<' + Filters[index].Value2.Text
     else
       UsedFilters[index].QueryString :=
         Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefTable +
         '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefField +
-        '>' + Filters[index].Value1.Text + ' and ' + Tables[TableIndex].Name +
-        '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].Name +
+        '>' + Filters[index].Value1.Text + ' and ' +
+        Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefTable +
+        '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefField +
         '<' + Filters[index].Value2.Text;
   end;
 
-  {if (Filters[index].Value1.text <> '') and (Filters[index].Value2.text <> '') then begin
-    if Tables[TableIndex].Fields[Filters[index].DBcolumns.itemindex].RefField = 'none' then
-      UsedFilters[index].QueryString := Tables[TableIndex].name + '.' +
-        Tables[TableIndex].Fields[Filters[index].DBcolumns.itemindex].name +
-          'BEETWEEN' +  ' :param1 ' + ' and ' + ' :param2 '
-    else
-      UsedFilters[index].QueryString :=
-        Tables[TableIndex].Fields[Filters[index].DBcolumns.itemindex].RefTable +
-          '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.itemindex].RefField +
-            'BEETWEEN' +  ' :param1 ' + ' and ' + ' :param2 ';
-  end;
-
+  {
   TableForm1.SQLQuery1.ParamByName('param1').AsString := Filters[index].Value1.text;
-  TableForm1.SQLQuery1.ParamByName('param2').AsString := Filters[index].Value2.text; }
+  TableForm1.SQLQuery1.ParamByName('param2').AsString := Filters[index].Value2.text;
+  }
 
   UsedFilters[index].used := not UsedFilters[index].used;
+  if UsedFilters[index].used then
+    (Sender as TSpeedButton).color := clGreen
+  else (Sender as TSpeedButton).color := clDefault;
+  (Sender as TSpeedButton).Repaint;
   TableForm1.SQLQuery1.Close;
   TableForm1.SQLQuery1.SQL.Text := '';
   TableForm1.SQLQuery1.SQL := GetSqlInnerCode(TableIndex);
-  ShowMessage(TableForm1.SQLQuery1.SQL.Text);
   TableForm1.SQLQuery1.SQL.Text :=
     TableForm1.SQLQuery1.SQL.Text + ' ' + GetSqlWhereCode() + ' ';
-  ShowMessage(TableForm1.SQLQuery1.SQL.Text);
   TableForm1.SQLQuery1.Open;
   GetPropsColumns(TableIndex);
 
@@ -364,7 +358,6 @@ begin
   Delete(s, length(s) - 3, 4);
   if length(s) = 2 then
     s := '';
-  ShowMessage(s);
   Result := s;
 end;
 

@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="25">
+    <Units Count="23">
       <Unit0>
         <Filename Value="lagunaLpi.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -45,8 +45,8 @@
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="51"/>
-        <CursorPos X="42" Y="73"/>
-        <UsageCount Value="180"/>
+        <CursorPos X="23" Y="62"/>
+        <UsageCount Value="194"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -59,115 +59,13 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="237"/>
-        <CursorPos X="62" Y="260"/>
-        <UsageCount Value="133"/>
+        <TopLine Value="269"/>
+        <CursorPos X="57" Y="292"/>
+        <UsageCount Value="147"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="3914"/>
-        <CursorPos X="1" Y="3941"/>
-        <UsageCount Value="65"/>
-      </Unit5>
-      <Unit6>
-        <Filename Value="C:\lazarus\lcl\include\customlistbox.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="170"/>
-        <CursorPos X="1" Y="197"/>
-        <UsageCount Value="64"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="C:\lazarus\lcl\lclclasses.pp"/>
-        <UnitName Value="LCLClasses"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="126"/>
-        <CursorPos X="1" Y="154"/>
-        <UsageCount Value="9"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="C:\lazarus\lcl\include\dbcustomnavigator.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="368"/>
-        <CursorPos X="1" Y="395"/>
-        <UsageCount Value="1"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="C:\Langs\lazarus\lcl\include\customform.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1938"/>
-        <CursorPos X="1" Y="1961"/>
-        <UsageCount Value="1"/>
-      </Unit9>
-      <Unit10>
-        <Filename Value="C:\lazarus\lcl\dbgrids.pas"/>
-        <UnitName Value="DBGrids"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="3502"/>
-        <CursorPos X="1" Y="3532"/>
-        <UsageCount Value="13"/>
-      </Unit10>
-      <Unit11>
-        <Filename Value="C:\lazarus\lcl\include\messagedialogs.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="178"/>
-        <CursorPos X="1" Y="205"/>
-        <UsageCount Value="3"/>
-      </Unit11>
-      <Unit12>
-        <Filename Value="C:\lazarus\lcl\include\lclintf.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="338"/>
-        <CursorPos X="1" Y="365"/>
-        <UsageCount Value="3"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32lclintf.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="679"/>
-        <CursorPos X="1" Y="724"/>
-        <UsageCount Value="3"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="C:\lazarus\lcl\themes.pas"/>
-        <UnitName Value="Themes"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="537"/>
-        <CursorPos X="1" Y="565"/>
-        <UsageCount Value="3"/>
-      </Unit14>
-      <Unit15>
-        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="5301"/>
-        <CursorPos X="1" Y="5327"/>
-        <UsageCount Value="9"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1145"/>
-        <CursorPos X="1" Y="1172"/>
-        <UsageCount Value="3"/>
-      </Unit16>
-      <Unit17>
-        <Filename Value="C:\lazarus\components\lazutils\winlazutf8.inc"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="16"/>
-        <UsageCount Value="3"/>
-      </Unit17>
-      <Unit18>
-        <Filename Value="C:\lazarus\components\lazutils\lazfileutils.pas"/>
-        <UnitName Value="LazFileUtils"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="216"/>
-        <CursorPos X="1" Y="254"/>
-        <UsageCount Value="3"/>
-      </Unit18>
-      <Unit19>
         <Filename Value="selectfilter.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="selFilter"/>
@@ -176,45 +74,133 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="42" Y="34"/>
-        <UsageCount Value="38"/>
-      </Unit19>
-      <Unit20>
+        <UsageCount Value="52"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3914"/>
+        <CursorPos X="1" Y="3941"/>
+        <UsageCount Value="64"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="C:\lazarus\lcl\include\customlistbox.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="170"/>
+        <CursorPos X="1" Y="197"/>
+        <UsageCount Value="63"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="C:\lazarus\lcl\lclclasses.pp"/>
+        <UnitName Value="LCLClasses"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="126"/>
+        <CursorPos X="1" Y="154"/>
+        <UsageCount Value="8"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="C:\lazarus\lcl\dbgrids.pas"/>
+        <UnitName Value="DBGrids"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3502"/>
+        <CursorPos X="1" Y="3532"/>
+        <UsageCount Value="12"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="C:\lazarus\lcl\include\messagedialogs.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="178"/>
+        <CursorPos X="1" Y="205"/>
+        <UsageCount Value="2"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="C:\lazarus\lcl\include\lclintf.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="338"/>
+        <CursorPos X="1" Y="365"/>
+        <UsageCount Value="2"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="C:\lazarus\lcl\interfaces\win32\win32lclintf.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="679"/>
+        <CursorPos X="1" Y="724"/>
+        <UsageCount Value="2"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="C:\lazarus\lcl\themes.pas"/>
+        <UnitName Value="Themes"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="537"/>
+        <CursorPos X="1" Y="565"/>
+        <UsageCount Value="2"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="5301"/>
+        <CursorPos X="1" Y="5327"/>
+        <UsageCount Value="8"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="C:\lazarus\lcl\include\application.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1145"/>
+        <CursorPos X="1" Y="1172"/>
+        <UsageCount Value="2"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="C:\lazarus\components\lazutils\winlazutf8.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="16"/>
+        <UsageCount Value="2"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="C:\lazarus\components\lazutils\lazfileutils.pas"/>
+        <UnitName Value="LazFileUtils"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="216"/>
+        <CursorPos X="1" Y="254"/>
+        <UsageCount Value="2"/>
+      </Unit17>
+      <Unit18>
         <Filename Value="C:\lazarus\lcl\include\buttoncontrol.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="16"/>
-        <UsageCount Value="9"/>
-      </Unit20>
-      <Unit21>
+        <UsageCount Value="8"/>
+      </Unit18>
+      <Unit19>
         <Filename Value="C:\lazarus\lcl\include\buttons.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="143"/>
         <CursorPos X="1" Y="170"/>
-        <UsageCount Value="9"/>
-      </Unit21>
-      <Unit22>
+        <UsageCount Value="8"/>
+      </Unit19>
+      <Unit20>
         <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
         <UnitName Value="LCLMessageGlue"/>
         <WindowIndex Value="0"/>
         <TopLine Value="93"/>
         <CursorPos X="1" Y="112"/>
-        <UsageCount Value="9"/>
-      </Unit22>
-      <Unit23>
+        <UsageCount Value="8"/>
+      </Unit20>
+      <Unit21>
         <Filename Value="C:\lazarus\lcl\interfaces\win32\win32callback.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="74"/>
         <CursorPos X="1" Y="100"/>
-        <UsageCount Value="9"/>
-      </Unit23>
-      <Unit24>
+        <UsageCount Value="8"/>
+      </Unit21>
+      <Unit22>
         <Filename Value="C:\lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1491"/>
         <CursorPos X="15" Y="1514"/>
-        <UsageCount Value="9"/>
-      </Unit24>
+        <UsageCount Value="8"/>
+      </Unit22>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
@@ -222,55 +208,55 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="161" Column="1" TopLine="152"/>
+        <Caret Line="162" Column="1" TopLine="152"/>
       </Position1>
       <Position2>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="162" Column="1" TopLine="152"/>
+        <Caret Line="163" Column="1" TopLine="152"/>
       </Position2>
       <Position3>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="163" Column="1" TopLine="152"/>
+        <Caret Line="164" Column="1" TopLine="152"/>
       </Position3>
       <Position4>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="164" Column="1" TopLine="152"/>
+        <Caret Line="182" Column="1" TopLine="152"/>
       </Position4>
       <Position5>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="182" Column="1" TopLine="152"/>
+        <Caret Line="161" Column="1" TopLine="152"/>
       </Position5>
       <Position6>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="161" Column="1" TopLine="152"/>
+        <Caret Line="39" Column="32" TopLine="17"/>
       </Position6>
       <Position7>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="39" Column="32" TopLine="17"/>
+        <Caret Line="35" Column="36" TopLine="15"/>
       </Position7>
       <Position8>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="35" Column="36" TopLine="15"/>
+        <Caret Line="159" Column="30" TopLine="148"/>
       </Position8>
       <Position9>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="159" Column="30" TopLine="148"/>
+        <Caret Line="173" Column="3" TopLine="148"/>
       </Position9>
       <Position10>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="173" Column="3" TopLine="148"/>
+        <Caret Line="168" Column="38" TopLine="151"/>
       </Position10>
       <Position11>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="168" Column="38" TopLine="151"/>
+        <Caret Line="172" Column="24" TopLine="151"/>
       </Position11>
       <Position12>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="172" Column="24" TopLine="151"/>
+        <Caret Line="201" Column="5" TopLine="172"/>
       </Position12>
       <Position13>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="16" Column="31" TopLine="115"/>
+        <Caret Line="202" Column="5" TopLine="173"/>
       </Position13>
       <Position14>
         <Filename Value="uformtable.pas"/>
@@ -278,67 +264,67 @@
       </Position14>
       <Position15>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="202" Column="5" TopLine="173"/>
+        <Caret Line="105" Column="24" TopLine="79"/>
       </Position15>
       <Position16>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="201" Column="5" TopLine="172"/>
+        <Caret Line="238" Column="42" TopLine="200"/>
       </Position16>
       <Position17>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="105" Column="24" TopLine="79"/>
+        <Caret Line="234" Column="46" TopLine="198"/>
       </Position17>
       <Position18>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="238" Column="42" TopLine="200"/>
+        <Caret Line="239" Column="57" TopLine="216"/>
       </Position18>
       <Position19>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="234" Column="46" TopLine="198"/>
+        <Caret Line="238" Column="32" TopLine="215"/>
       </Position19>
       <Position20>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="239" Column="57" TopLine="216"/>
+        <Caret Line="43" Column="24" TopLine="25"/>
       </Position20>
       <Position21>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="238" Column="32" TopLine="215"/>
+        <Caret Line="299" Column="27" TopLine="267"/>
       </Position21>
       <Position22>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="43" Column="24" TopLine="25"/>
+        <Caret Line="302" Column="15" TopLine="258"/>
       </Position22>
       <Position23>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="299" Column="27" TopLine="267"/>
+        <Caret Line="298" Column="22" TopLine="270"/>
       </Position23>
       <Position24>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="302" Column="15" TopLine="258"/>
+        <Caret Line="309" Column="33" TopLine="278"/>
       </Position24>
       <Position25>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="298" Column="22" TopLine="270"/>
+        <Caret Line="238" Column="72" TopLine="215"/>
       </Position25>
       <Position26>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="309" Column="33" TopLine="278"/>
+        <Caret Line="256" Column="3" TopLine="230"/>
       </Position26>
       <Position27>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="238" Column="72" TopLine="215"/>
+        <Caret Line="216" Column="86" TopLine="199"/>
       </Position27>
       <Position28>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="256" Column="3" TopLine="230"/>
+        <Caret Line="258" Column="38" TopLine="224"/>
       </Position28>
       <Position29>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="216" Column="86" TopLine="199"/>
+        <Caret Line="277" Column="81" TopLine="248"/>
       </Position29>
       <Position30>
         <Filename Value="uformtable.pas"/>
-        <Caret Line="258" Column="38" TopLine="224"/>
+        <Caret Line="293" Column="27" TopLine="268"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

@@ -121,6 +121,20 @@ object TableForm1: TTableForm1
       ParentFont = False
       TabOrder = 1
     end
+    object SpeedButton1: TSpeedButton
+      Left = 44
+      Height = 22
+      Top = 211
+      Width = 68
+      Caption = '123'
+      Font.CharSet = RUSSIAN_CHARSET
+      Font.Color = clGreen
+      Font.Height = -24
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+    end
   end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
