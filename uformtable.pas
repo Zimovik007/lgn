@@ -49,7 +49,7 @@ type
     UsedFilters: array of FilterQueryBox;
     Filters: array of Filter;
     CountDelFilters: integer;
-    UsedSortColumns: array of integer;
+    ComparisonSortString: string;
   end;
 
 
@@ -62,15 +62,6 @@ implementation
 {$R *.lfm}
 
 { TTableForm1 }
-
-procedure TTableForm1.BuildSqlCode;
-begin
-  TableForm1.SQLQuery1.SQL.Text := '';
-  TableForm1.SQLQuery1.SQL := GetSqlInnerCode(TableIndex);
-  TableForm1.SQLQuery1.SQL.Text :=
-    TableForm1.SQLQuery1.SQL.Text + ' ' + GetSqlWhereCode() + ' ';
-  UseParams();
-end;
 
 procedure TTableForm1.DBGrid1TitleClick(Column: TColumn);
 var
@@ -94,8 +85,13 @@ begin
   TableForm1.SQLQuery1.Close;
   BuildSqlCode;
   TableForm1.SQLQuery1.SQL.Text := TableForm1.SQLQuery1.SQL.Text + 'ORDER BY ' + s;
+  if ComparisonSortString = s then begin
+    TableForm1.SQLQuery1.SQL.Text := TableForm1.SQLQuery1.SQL.Text + ' DESC ';
+    s := '';
+  end;
   TableForm1.SQLQuery1.Open;
   GetPropsColumns(TableIndex);
+  ComparisonSortString := s;
 end;
 
 procedure TTableForm1.AddFilterButtonClick(Sender: TObject);
@@ -304,21 +300,6 @@ begin
   GetPropsColumns(TableIndex);
 end;
 
-procedure TTableForm1.UseParams();
-var
-  i: integer;
-begin
-  for i := 0 to high(UsedFilters) do
-    if UsedFilters[i].Used then
-    begin
-      TableForm1.SQLQuery1.ParamByName(Filters[i].Value1.Text).AsString :=
-        Filters[i].Value1.Text;
-      if Filters[i].Value2.Text <> '' then
-        TableForm1.SQLQuery1.ParamByName(Filters[i].Value2.Text).AsString :=
-          Filters[i].Value2.Text;
-    end;
-end;
-
 procedure TTableForm1.CreateTable(Sender: TObject; index: integer);
 var
   i: integer;
@@ -331,7 +312,6 @@ begin
   TableForm1.SQLQuery1.SQL := GetSqlInnerCode(index);
   TableForm1.SQLQuery1.Active := True;
   GetPropsColumns(index);
-  setlength(UsedSortColumns, length(Tables[index].Fields));
 end;
 
 function TTableForm1.GetSqlInnerCode(index: integer): TStringList;
@@ -389,6 +369,30 @@ begin
     TableForm1.DBGrid1.Columns[i].Width := Tables[index].Fields[i].Width;
     TableForm1.DBGrid1.Columns[i].Visible := Tables[index].Fields[i].Visible;
   end;
+end;
+
+procedure TTableForm1.BuildSqlCode;
+begin
+  TableForm1.SQLQuery1.SQL.Text := '';
+  TableForm1.SQLQuery1.SQL := GetSqlInnerCode(TableIndex);
+  TableForm1.SQLQuery1.SQL.Text :=
+    TableForm1.SQLQuery1.SQL.Text + ' ' + GetSqlWhereCode() + ' ';
+  UseParams();
+end;
+
+procedure TTableForm1.UseParams();
+var
+  i: integer;
+begin
+  for i := 0 to high(UsedFilters) do
+    if UsedFilters[i].Used then
+    begin
+      TableForm1.SQLQuery1.ParamByName(Filters[i].Value1.Text).AsString :=
+        Filters[i].Value1.Text;
+      if Filters[i].Value2.Text <> '' then
+        TableForm1.SQLQuery1.ParamByName(Filters[i].Value2.Text).AsString :=
+          Filters[i].Value2.Text;
+    end;
 end;
 
 end.

@@ -59,8 +59,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="215"/>
-        <CursorPos X="32" Y="250"/>
+        <TopLine Value="291"/>
+        <CursorPos X="63" Y="312"/>
         <UsageCount Value="434"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -79,8 +79,8 @@
       <Unit6>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="2686"/>
-        <CursorPos X="1" Y="2713"/>
+        <TopLine Value="3215"/>
+        <CursorPos X="1" Y="3242"/>
         <UsageCount Value="35"/>
       </Unit6>
       <Unit7>
@@ -108,7 +108,7 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="20" HistoryIndex="19">
+    <JumpHistory Count="23" HistoryIndex="22">
       <Position1>
         <Filename Value="uformtable.pas"/>
         <Caret Line="258" Column="38" TopLine="224"/>
@@ -189,6 +189,18 @@
         <Filename Value="uformtable.pas"/>
         <Caret Line="246" Column="31" TopLine="208"/>
       </Position20>
+      <Position21>
+        <Filename Value="uformtable.pas"/>
+        <Caret Line="250" Column="32" TopLine="215"/>
+      </Position21>
+      <Position22>
+        <Filename Value="uformtable.pas"/>
+        <Caret Line="193" Column="66" TopLine="191"/>
+      </Position22>
+      <Position23>
+        <Filename Value="uformtable.pas"/>
+        <Caret Line="89" Column="78" TopLine="70"/>
+      </Position23>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>
