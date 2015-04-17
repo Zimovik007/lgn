@@ -59,8 +59,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="291"/>
-        <CursorPos X="63" Y="312"/>
+        <TopLine Value="211"/>
+        <CursorPos X="38" Y="220"/>
         <UsageCount Value="434"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -81,34 +81,34 @@
         <WindowIndex Value="0"/>
         <TopLine Value="3215"/>
         <CursorPos X="1" Y="3242"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="33"/>
       </Unit6>
       <Unit7>
         <Filename Value="C:\lazarus\lcl\include\customlistbox.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="170"/>
         <CursorPos X="1" Y="197"/>
-        <UsageCount Value="34"/>
+        <UsageCount Value="32"/>
       </Unit7>
       <Unit8>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="8019"/>
         <CursorPos X="1" Y="8046"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="8"/>
       </Unit8>
       <Unit9>
         <Filename Value="C:\lazarus\lcl\include\speedbutton.inc"/>
         <WindowIndex Value="0"/>
         <TopLine Value="529"/>
         <CursorPos X="1" Y="838"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="8"/>
       </Unit9>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="23" HistoryIndex="22">
+    <JumpHistory Count="25" HistoryIndex="24">
       <Position1>
         <Filename Value="uformtable.pas"/>
         <Caret Line="258" Column="38" TopLine="224"/>
@@ -201,6 +201,14 @@
         <Filename Value="uformtable.pas"/>
         <Caret Line="89" Column="78" TopLine="70"/>
       </Position23>
+      <Position24>
+        <Filename Value="uformtable.pas"/>
+        <Caret Line="115" Column="29" TopLine="91"/>
+      </Position24>
+      <Position25>
+        <Filename Value="uformtable.pas"/>
+        <Caret Line="231" Column="31" TopLine="216"/>
+      </Position25>
     </JumpHistory>
   </ProjectSession>
   <EditorMacros Count="0"/>

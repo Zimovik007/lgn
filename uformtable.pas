@@ -112,6 +112,7 @@ begin
     Height := 12;
     left := 10;
     Width := 116;
+    Style := csDropDownList;
     for i := 0 to high(Tables[Tableindex].Fields) do
       if Tables[Tableindex].Fields[i].Visible then
         Items.Add(Tables[Tableindex].Fields[i].Caption);
@@ -217,13 +218,19 @@ var
   index, i, j: integer;
 begin
   index := (Sender as TButton).Tag;
+  if UsedFilters[index].used then begin
+    UsedFilters[index].used := not UsedFilters[index].used;
+    TableForm1.SQLQuery1.Close;
+    BuildSqlCode;
+    TableForm1.SQLQuery1.Open;
+    GetPropsColumns(TableIndex);
+  end;
   FreeAndNil(Filters[index].ActiveFilter);
   FreeAndNil(Filters[index].DBColumns);
   FreeAndNil(Filters[index].Value1);
   FreeAndNil(Filters[index].Value2);
   FreeAndNil(Filters[index].Label1);
   Filters[index].DeleteFilter.Hide;
-  UsedFilters[index].used := not UsedFilters[index].used;
   for i := index + 1 to high(Filters) do
   begin
     if Filters[i].DBColumns = nil then
@@ -238,10 +245,6 @@ begin
       ActiveFilter.top := ActiveFilter.top - 70;
     end;
   end;
-  TableForm1.SQLQuery1.Close;
-  BuildSqlCode;
-  TableForm1.SQLQuery1.Open;
-  GetPropsColumns(TableIndex);
   CountDelFilters += 1;
 end;
 
