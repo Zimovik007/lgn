@@ -41,9 +41,10 @@ type
   public
     procedure CreateTable(Sender: TObject; index: integer);
     function GetSqlInnerCode(index: integer): TStringList;
-    //function GetSqlOrderCode(): string;
     function GetSqlWhereCode(): string;
     procedure GetPropsColumns(index: integer);
+    procedure BuildSqlCode;
+    procedure UseParams();
   private
     UsedFilters: array of FilterQueryBox;
     Filters: array of Filter;
@@ -61,6 +62,15 @@ implementation
 {$R *.lfm}
 
 { TTableForm1 }
+
+procedure TTableForm1.BuildSqlCode;
+begin
+  TableForm1.SQLQuery1.SQL.Text := '';
+  TableForm1.SQLQuery1.SQL := GetSqlInnerCode(TableIndex);
+  TableForm1.SQLQuery1.SQL.Text :=
+    TableForm1.SQLQuery1.SQL.Text + ' ' + GetSqlWhereCode() + ' ';
+  UseParams();
+end;
 
 procedure TTableForm1.DBGrid1TitleClick(Column: TColumn);
 var
@@ -82,10 +92,7 @@ begin
     end;
   end;
   TableForm1.SQLQuery1.Close;
-  TableForm1.SQLQuery1.SQL.Text := '';
-  TableForm1.SQLQuery1.SQL := GetSqlInnerCode(TableIndex);
-  TableForm1.SQLQuery1.SQL.Text :=
-    TableForm1.SQLQuery1.SQL.Text + ' ' + GetSqlWhereCode() + ' ';
+  BuildSqlCode;
   TableForm1.SQLQuery1.SQL.Text := TableForm1.SQLQuery1.SQL.Text + 'ORDER BY ' + s;
   TableForm1.SQLQuery1.Open;
   GetPropsColumns(TableIndex);
@@ -203,6 +210,8 @@ begin
     Caption := 'Go';
     left := 130;
     tag := high(Filters);
+    GroupIndex := tag + 1;
+    AllowAllUp := True;
     onclick := @ActiveFilter;
   end;
 end;
@@ -218,6 +227,7 @@ begin
   FreeAndNil(Filters[index].Value2);
   FreeAndNil(Filters[index].Label1);
   Filters[index].DeleteFilter.Hide;
+  UsedFilters[index].used := not UsedFilters[index].used;
   for i := index + 1 to high(Filters) do
   begin
     if Filters[i].DBColumns = nil then
@@ -232,6 +242,10 @@ begin
       ActiveFilter.top := ActiveFilter.top - 70;
     end;
   end;
+  TableForm1.SQLQuery1.Close;
+  BuildSqlCode;
+  TableForm1.SQLQuery1.Open;
+  GetPropsColumns(TableIndex);
   CountDelFilters += 1;
 end;
 
@@ -240,6 +254,7 @@ var
   index: integer;
 begin
   index := (Sender as TSpeedButton).Tag;
+
   if (Filters[index].Value1.Text = '') and (Filters[index].Value2.Text = '') then
   begin
     ShowMessage('Запрос введен неверно!');
@@ -253,12 +268,12 @@ begin
       UsedFilters[index].QueryString :=
         Tables[TableIndex].Name + '.' +
         Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex + 1].Name +
-        Filters[index].Label1.Caption + Filters[index].Value1.Text
+        Filters[index].Label1.Caption + ' :' + Filters[index].Value1.Text
     else
       UsedFilters[index].QueryString :=
         Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefTable +
         '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefField +
-        Filters[index].Label1.Caption + Filters[index].Value1.Text;
+        Filters[index].Label1.Caption + ' :' + Filters[index].Value1.Text;
   end;
 
   if (Filters[index].Value1.Text <> '') and (Filters[index].Value2.Text <> '') then
@@ -268,37 +283,40 @@ begin
       UsedFilters[index].QueryString :=
         Tables[TableIndex].Name + '.' +
         Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex + 1].Name +
-        '>' + Filters[index].Value1.Text + ' and ' + Tables[TableIndex].Name +
-        '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex + 1].Name +
-        '<' + Filters[index].Value2.Text
+        '>' + ' :' + Filters[index].Value1.Text + ' and ' +
+        Tables[TableIndex].Name + '.' +
+        Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex + 1].Name +
+        '<' + ' :' + Filters[index].Value2.Text
     else
       UsedFilters[index].QueryString :=
         Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefTable +
         '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefField +
-        '>' + Filters[index].Value1.Text + ' and ' +
+        '>' + ' :' + Filters[index].Value1.Text + ' and ' +
         Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefTable +
         '.' + Tables[TableIndex].Fields[Filters[index].DBcolumns.ItemIndex].RefField +
-        '<' + Filters[index].Value2.Text;
+        '<' + ' :' + Filters[index].Value2.Text;
   end;
 
-  {
-  TableForm1.SQLQuery1.ParamByName('param1').AsString := Filters[index].Value1.text;
-  TableForm1.SQLQuery1.ParamByName('param2').AsString := Filters[index].Value2.text;
-  }
-
   UsedFilters[index].used := not UsedFilters[index].used;
-  if UsedFilters[index].used then
-    (Sender as TSpeedButton).color := clGreen
-  else (Sender as TSpeedButton).color := clDefault;
-  (Sender as TSpeedButton).Repaint;
   TableForm1.SQLQuery1.Close;
-  TableForm1.SQLQuery1.SQL.Text := '';
-  TableForm1.SQLQuery1.SQL := GetSqlInnerCode(TableIndex);
-  TableForm1.SQLQuery1.SQL.Text :=
-    TableForm1.SQLQuery1.SQL.Text + ' ' + GetSqlWhereCode() + ' ';
+  BuildSqlCode;
   TableForm1.SQLQuery1.Open;
   GetPropsColumns(TableIndex);
+end;
 
+procedure TTableForm1.UseParams();
+var
+  i: integer;
+begin
+  for i := 0 to high(UsedFilters) do
+    if UsedFilters[i].Used then
+    begin
+      TableForm1.SQLQuery1.ParamByName(Filters[i].Value1.Text).AsString :=
+        Filters[i].Value1.Text;
+      if Filters[i].Value2.Text <> '' then
+        TableForm1.SQLQuery1.ParamByName(Filters[i].Value2.Text).AsString :=
+          Filters[i].Value2.Text;
+    end;
 end;
 
 procedure TTableForm1.CreateTable(Sender: TObject; index: integer);
@@ -354,7 +372,7 @@ begin
   s := 'where ';
   for i := 0 to high(UsedFilters) do
     if (UsedFilters[i].used) and (Filters[i].DBcolumns <> nil) then
-      s := s + UsedFilters[i].QueryString + 'and ';
+      s := s + UsedFilters[i].QueryString + ' and ';
   Delete(s, length(s) - 3, 4);
   if length(s) = 2 then
     s := '';
