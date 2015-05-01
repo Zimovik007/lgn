@@ -25,12 +25,14 @@ type
   end;
 
   procedure FillMetaData;
+  procedure GetIDTables;
   procedure addTable(name1, caption1: string);
   procedure addField(numTable: integer; name1, caption1: string;width1: integer;
     visible: boolean; type1: TFieldType; RefTable1, RefField1: string);
 
 var
   Tables: array of TTable;
+  ID: array of integer;
 
 implementation
 
@@ -71,27 +73,34 @@ begin
   addtable('WEEKDAYS', 'Дни Недели');
 
   addField(0, 'id', 'Ключ', 60, false, ftInteger, 'none', 'none');
-  addField(0, 'classroom', 'Аудитория', 100, true, ftString, 'none', 'none');
+  addField(0, 'CLASSROOM', 'Аудитория', 100, true, ftString, 'none', 'none');
   addField(1, 'id', 'Ключ', 60, false, ftInteger, 'none', 'none');
-  addField(1, 'SubName', 'Предмет', 320, true, ftString, 'none', 'none');
+  addField(1, 'SUBNAME', 'Предмет', 320, true, ftString, 'none', 'none');
   addField(2, 'id', 'Ключ', 60, false, ftInteger, 'none', 'none');
-  addField(2, 'GroupName', 'Группа', 100, true, ftString, 'none', 'none');
-  addField(3, 'group_id', 'Группа', 130, true, ftInteger, 'GROUPS', 'GroupName');
-  addField(3, 'course_id', 'Предмет', 300, true, ftInteger, 'COURSES', 'SubName');
-  addField(4, 'pair_id', 'Пара', 120, true, ftInteger, 'PAIRS', 'period');
-  addField(4, 'weekday_id', 'День недели', 130, true, ftInteger, 'WEEKDAYS', 'weekday');
-  addField(4, 'group_id', 'Группа', 100, true, ftInteger, 'GROUPS', 'GroupName');
-  addField(4, 'course_id', 'Предмет', 300, true, ftInteger, 'COURSES', 'SubName');
-  addField(4, 'class_id', 'Аудитория', 100, true, ftInteger, 'CLASSROOMS', 'classroom');
-  addField(4, 'teacher_id', 'Преподаватель', 300, true, ftInteger, 'TEACHERS', 'TeacherName');
+  addField(2, 'GROUPNAME', 'Группа', 100, true, ftString, 'none', 'none');
+  addField(3, 'group_id', 'Группа', 130, true, ftInteger, 'GROUPS', 'GROUPNAME');
+  addField(3, 'course_id', 'Предмет', 300, true, ftInteger, 'COURSES', 'SUBNAME');
+  addField(4, 'pair_id', 'Пара', 120, true, ftInteger, 'PAIRS', 'PERIOD');
+  addField(4, 'weekday_id', 'День недели', 130, true, ftInteger, 'WEEKDAYS', 'WEEKDAY');
+  addField(4, 'group_id', 'Группа', 100, true, ftInteger, 'GROUPS', 'GROUPNAME');
+  addField(4, 'course_id', 'Предмет', 300, true, ftInteger, 'COURSES', 'SUBNAME');
+  addField(4, 'class_id', 'Аудитория', 100, true, ftInteger, 'CLASSROOMS', 'CLASSROOM');
+  addField(4, 'teacher_id', 'Преподаватель', 300, true, ftInteger, 'TEACHERS', 'TEACHERNAME');
   addField(5, 'id', 'Ключ', 60, false, ftInteger, 'none', 'none');
-  addField(5, 'period', 'Период', 100, true, ftString, 'none', 'none');
+  addField(5, 'PERIOD', 'Период', 100, true, ftString, 'none', 'none');
   addField(6, 'id', 'Ключ', 60, false, ftInteger, 'none', 'none');
-  addField(6, 'TeacherName', 'Преподаватель', 270, true, ftString, 'none', 'none');
-  addField(7, 'teacher_id', 'Преподаватель', 300, true, ftInteger, 'TEACHERS', 'TeacherName');
-  addField(7, 'course_id', 'Предмет', 300, true, ftInteger, 'COURSES', 'SubName');
+  addField(6, 'TEACHERNAME', 'Преподаватель', 270, true, ftString, 'none', 'none');
+  addField(7, 'teacher_id', 'Преподаватель', 300, true, ftInteger, 'TEACHERS', 'TEACHERNAME');
+  addField(7, 'course_id', 'Предмет', 300, true, ftInteger, 'COURSES', 'SUBNAME');
   addField(8, 'id', 'Ключ', 60, false, ftInteger, 'none', 'none');
-  addField(8, 'weekday', 'День недели', 150, true, ftString, 'none', 'none');
+  addField(8, 'WEEKDAY', 'День недели', 150, true, ftString, 'none', 'none');
+
+  GetIDtables;
+end;
+
+procedure GetIDtables;
+begin
+
 end;
 
 end.

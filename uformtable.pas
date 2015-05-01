@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, sqldb, DB, FileUtil, Forms, Controls, Graphics, Dialogs,
-  DBGrids, DBCtrls, Menus, ExtCtrls, StdCtrls, ActnList, UMetaData, Buttons;
+  DBGrids, DBCtrls, Menus, ExtCtrls, StdCtrls, ActnList, UMetaData, Buttons,
+  UFormEditDB, UdbConnection;
 
 type
 
@@ -28,6 +29,8 @@ type
 
   TTableForm1 = class(TForm)
     AddFilterButton: TButton;
+    AddRecord: TButton;
+    DeleteRecord: TButton;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
     DBNavigator1: TDBNavigator;
@@ -35,10 +38,14 @@ type
     selfilter1: TRadioGroup;
     SQLQuery1: TSQLQuery;
     procedure AddFilterButtonClick(Sender: TObject);
+    procedure AddRecordClick(Sender: TObject);
     procedure DBGrid1TitleClick(Column: TColumn);
+    procedure DeleteRecordClick(Sender: TObject);
     procedure DelFilter(Sender: TObject);
     procedure ActiveFilter(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   public
+    procedure RefreshTable(Sender: TObject);
     procedure CreateTable(Sender: TObject; index: integer);
     function GetSqlInnerCode(index: integer): TStringList;
     function GetSqlWhereCode(): string;
@@ -213,9 +220,26 @@ begin
   end;
 end;
 
+procedure TTableForm1.RefreshTable(Sender: TObject);
+begin
+  TableForm1.SQLQuery1.Close;
+  BuildSqlCode;
+  TableForm1.SQLQuery1.Open;
+  GetPropsColumns(TableIndex);
+end;
+
+procedure TTableForm1.AddRecordClick(Sender: TObject);
+begin
+  EditForm := TEditForm.Create(self);
+  EditForm.Notify := @RefreshTable;
+  if Tables[TableIndex].Fields[0].RefTable = 'none' then
+    EditForm.AddRecord(TableIndex, false)
+  else EditForm.AddRecord(TableIndex, true);
+end;
+
 procedure TTableForm1.DelFilter(Sender: TObject);
 var
-  index, i, j: integer;
+  index, i: integer;
 begin
   index := (Sender as TButton).Tag;
   if UsedFilters[index].used then begin
@@ -303,9 +327,12 @@ begin
   GetPropsColumns(TableIndex);
 end;
 
+procedure TTableForm1.FormCreate(Sender: TObject);
+begin
+
+end;
+
 procedure TTableForm1.CreateTable(Sender: TObject; index: integer);
-var
-  i: integer;
 begin
   TableIndex := index;
   TableForm1 := TTableForm1.Create(Self);
@@ -396,6 +423,11 @@ begin
         TableForm1.SQLQuery1.ParamByName(Filters[i].Value2.Text).AsString :=
           Filters[i].Value2.Text;
     end;
+end;
+
+procedure TTableForm1.DeleteRecordClick(Sender: TObject);
+begin
+
 end;
 
 end.

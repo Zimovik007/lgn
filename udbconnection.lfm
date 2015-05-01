@@ -1,0 +1,22 @@
+object FormConnection: TFormConnection
+  Left = 1148
+  Height = 240
+  Top = 119
+  Width = 320
+  Caption = 'FormConnection'
+  LCLVersion = '1.2.4.0'
+  object SQLTransaction1: TSQLTransaction
+    Active = False
+    Database = IBConnection1
+  end
+  object IBConnection1: TIBConnection
+    Connected = False
+    LoginPrompt = False
+    KeepConnection = False
+    Password = 'masterkey'
+    Transaction = SQLTransaction1
+    UserName = 'sysdba'
+    LogEvents = []
+    left = 32
+  end
+end

@@ -1,10 +1,10 @@
 object Laguna: TLaguna
-  Left = 503
+  Left = 905
   Height = 200
-  Top = 345
+  Top = 268
   Width = 530
-  HorzScrollBar.Page = 530
-  VertScrollBar.Page = 180
+  HorzScrollBar.Page = 520
+  VertScrollBar.Page = 130
   AutoScroll = True
   Caption = 'Laguna'
   ClientHeight = 180
@@ -17,7 +17,7 @@ object Laguna: TLaguna
   KeyPreview = True
   Menu = MainMenu
   ParentBiDiMode = False
-  LCLVersion = '1.0.12.0'
+  LCLVersion = '1.2.4.0'
   object DBconnect: TMemo
     Left = 8
     Height = 26

@@ -1,4 +1,10 @@
-create database "localhost:C:\zimdb\zimovikdb.fdb" user 'sysdba' password 'masterkey';                                                
+create database "localhost:C:\zimdb\zimovikdb.fdb" user 'sysdba' password 'masterkey';        
+               
+create sequence NextId 
+start with 1000
+increment by 1;
+GO
+                         
 create table teachers(
   id INTEGER,
   TeacherName VARCHAR(50)

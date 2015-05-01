@@ -1,0 +1,40 @@
+unit selectfilter;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  StdCtrls;
+
+type
+
+  { TselFilter }
+
+  TselFilter = class(TForm)
+    CreateFilterButton: TButton;
+    SelectFilter: TRadioGroup;
+    procedure CreateFilterButtonClick(Sender: TObject);
+  public
+    FilterIndex: integer;
+  end;
+
+var
+  selFilter: TselFilter;
+
+implementation
+
+{$R *.lfm}
+
+{ TselFilter }
+
+procedure TselFilter.CreateFilterButtonClick(Sender: TObject);
+begin
+  FilterIndex := SelectFilter.ItemIndex;
+  flag := true;
+  selFilter.Close;
+end;
+
+end.
+

@@ -1,7 +1,7 @@
 object Laguna: TLaguna
-  Left = 606
+  Left = 905
   Height = 200
-  Top = 294
+  Top = 268
   Width = 530
   HorzScrollBar.Page = 520
   VertScrollBar.Page = 130
@@ -52,25 +52,6 @@ object Laguna: TLaguna
     Caption = 'Отключить'
     OnClick = ToDisconnectDBClick
     TabOrder = 2
-  end
-  object IBConnection1: TIBConnection
-    Connected = False
-    LoginPrompt = False
-    KeepConnection = False
-    Password = 'masterkey'
-    Transaction = SQLTransaction1
-    UserName = 'sysdba'
-    CharSet = 'utf-8'
-    LogEvents = []
-    left = 384
-    top = 8
-  end
-  object SQLTransaction1: TSQLTransaction
-    Active = False
-    Action = caNone
-    Database = IBConnection1
-    left = 416
-    top = 8
   end
   object MainMenu: TMainMenu
     left = 352

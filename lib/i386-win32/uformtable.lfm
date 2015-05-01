@@ -1,27 +1,29 @@
 object TableForm1: TTableForm1
-  Left = 767
-  Height = 566
-  Top = 131
-  Width = 855
+  Left = 742
+  Height = 596
+  Top = 188
+  Width = 869
   Caption = 'TableForm1'
-  ClientHeight = 566
-  ClientWidth = 855
+  ClientHeight = 596
+  ClientWidth = 869
   Constraints.MinHeight = 250
   Constraints.MinWidth = 250
+  OnCreate = FormCreate
   LCLVersion = '1.2.4.0'
   object DBGrid1: TDBGrid
     AnchorSideRight.Control = FiltersPanel
     AnchorSideBottom.Control = DBNavigator1
-    Left = 8
-    Height = 500
-    Top = 8
-    Width = 670
+    Left = 16
+    Height = 531
+    Top = 9
+    Width = 676
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
     Color = clWindow
     Columns = <>
     Constraints.MinHeight = 100
+    Constraints.MinWidth = 100
     DataSource = DataSource1
     Font.CharSet = RUSSIAN_CHARSET
     Font.Height = -16
@@ -42,10 +44,10 @@ object TableForm1: TTableForm1
   end
   object DBNavigator1: TDBNavigator
     AnchorSideRight.Control = FiltersPanel
-    Left = 8
+    Left = 16
     Height = 40
-    Top = 518
-    Width = 670
+    Top = 550
+    Width = 676
     Anchors = [akLeft, akRight, akBottom]
     BevelOuter = bvNone
     BorderSpacing.Right = 10
@@ -57,22 +59,22 @@ object TableForm1: TTableForm1
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
     ChildSizing.ControlsPerLine = 100
     ClientHeight = 40
-    ClientWidth = 670
+    ClientWidth = 676
     DataSource = DataSource1
     Options = []
     TabOrder = 1
     VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbRefresh]
   end
   object FiltersPanel: TPanel
-    Left = 688
-    Height = 549
+    Left = 702
+    Height = 531
     Top = 9
     Width = 160
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Top = 10
     BorderSpacing.Right = 10
     BorderSpacing.Bottom = 10
-    ClientHeight = 549
+    ClientHeight = 531
     ClientWidth = 160
     Font.CharSet = RUSSIAN_CHARSET
     Font.Height = -24
@@ -122,10 +124,36 @@ object TableForm1: TTableForm1
       TabOrder = 1
     end
   end
+  object AddRecord: TButton
+    Left = 702
+    Height = 39
+    Top = 551
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Top = 512
+    BorderSpacing.Bottom = 10
+    Caption = 'Add Запись'
+    OnClick = AddRecordClick
+    TabOrder = 3
+  end
+  object DeleteRecord: TButton
+    AnchorSideLeft.Control = AddRecord
+    Left = 787
+    Height = 39
+    Top = 551
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 85
+    BorderSpacing.Top = 512
+    BorderSpacing.Bottom = 10
+    Caption = 'Del Запись'
+    OnClick = DeleteRecordClick
+    TabOrder = 4
+  end
   object SQLQuery1: TSQLQuery
     FieldDefs = <>
-    Database = Laguna.IBConnection1
-    Transaction = Laguna.SQLTransaction1
+    Database = FormConnection.IBConnection1
+    Transaction = FormConnection.SQLTransaction1
     Params = <>
     left = 116
     top = 107

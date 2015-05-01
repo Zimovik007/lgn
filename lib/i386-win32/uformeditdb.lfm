@@ -1,0 +1,35 @@
+object EditForm: TEditForm
+  Left = 986
+  Height = 219
+  Top = 137
+  Width = 293
+  Caption = 'EditForm'
+  ClientHeight = 219
+  ClientWidth = 293
+  OnClose = FormClose
+  LCLVersion = '1.2.4.0'
+  object Apply1: TButton
+    Left = 72
+    Height = 25
+    Top = 648
+    Width = 75
+    Caption = 'Применить'
+    OnClick = Apply1Click
+    TabOrder = 0
+  end
+  object Cancel1: TButton
+    Left = 160
+    Height = 25
+    Top = 648
+    Width = 75
+    Caption = 'Отменить'
+    OnClick = Cancel1Click
+    TabOrder = 1
+  end
+  object SQLQuery1: TSQLQuery
+    FieldDefs = <>
+    Database = FormConnection.IBConnection1
+    Transaction = FormConnection.SQLTransaction1
+    Params = <>
+  end
+end

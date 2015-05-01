@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, IBConnection, sqldb, DB, FileUtil, Forms, Controls,
-  Graphics, Dialogs, StdCtrls, Menus, UMetaData, UFormTable;
+  Graphics, Dialogs, StdCtrls, Menus, UMetaData, UFormTable, UdbConnection;
 
 type
 
@@ -27,9 +27,7 @@ type
     ToConnectDB: TButton;
     DataSource1: TDataSource;
     DBconnect: TMemo;
-    IBConnection1: TIBConnection;
     SQLQuery1: TSQLQuery;
-    SQLTransaction1: TSQLTransaction;
     ToDisconnectDB: TButton;
     procedure AboutProgClick(Sender: TObject);
     procedure ExitMenu1Click(Sender: TObject);
@@ -57,12 +55,12 @@ implementation
 
 procedure TLaguna.ToConnectDBClick(Sender: TObject);
 begin
-  SQLTransaction1.Active := False;
-  IBConnection1.Connected := False;
-  IBConnection1.DatabaseName := DBConnect.Lines[0];
+  FormConnection.SQLTransaction1.Active := False;
+  FormConnection.IBConnection1.Connected := False;
+  FormConnection.IBConnection1.DatabaseName := DBConnect.Lines[0];
   try
-    SQLTransaction1.Active := True;
-    IBConnection1.Connected := True;
+    FormConnection.SQLTransaction1.Active := True;
+    FormConnection.IBConnection1.Connected := True;
     FillMetaData;
     CreateMenu(Sender);
   except
@@ -81,7 +79,7 @@ begin
   end;
   setlength(AllForms, 0);
   setlength(SubMenu, 0);
-  IBConnection1.connected := FALSE;
+  FormConnection.IBConnection1.connected := FALSE;
 end;
 
 procedure TLaguna.AboutProgClick(Sender: TObject);
@@ -113,7 +111,7 @@ begin
   for i := 0 to high(SubMenu) do
     SubMenu[i].free;
   SLTables := TStringList.Create;
-  IBConnection1.GetTableNames(SLTables, False);
+  FormConnection.IBConnection1.GetTableNames(SLTables, False);
   setlength(SubMenu, SLTables.Count);
   setlength(AllForms, SLTables.Count);
   for i := 0 to SLTables.Count - 1 do begin

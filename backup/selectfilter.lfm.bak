@@ -1,0 +1,54 @@
+object selFilter: TselFilter
+  Left = 844
+  Height = 240
+  Top = 207
+  Width = 470
+  Caption = 'Выберите тип фильтра'
+  ClientHeight = 240
+  ClientWidth = 470
+  Constraints.MaxHeight = 240
+  Constraints.MaxWidth = 470
+  Constraints.MinHeight = 240
+  Constraints.MinWidth = 470
+  LCLVersion = '1.2.4.0'
+  object SelectFilter: TRadioGroup
+    Left = 8
+    Height = 193
+    Top = 8
+    Width = 449
+    AutoFill = True
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 1
+    ClientHeight = 175
+    ClientWidth = 445
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -19
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ItemIndex = 0
+    Items.Strings = (
+      'Поиск точного значения'
+      'Диапазон значений'
+      'Больше определенного значения'
+      'Меньше определнного значения'
+    )
+    ParentFont = False
+    TabOrder = 0
+  end
+  object CreateFilterButton: TButton
+    Left = 382
+    Height = 25
+    Top = 208
+    Width = 75
+    Caption = 'Создать'
+    OnClick = CreateFilterButtonClick
+    TabOrder = 1
+  end
+end
